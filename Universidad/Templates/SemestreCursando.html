@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{%block tittle%}Materias {% endblock %}
+
+{%block body%}
+<h1>Semestre en Curso</h1>
+<section class="Pizarra">
+    {%for materia in Materias%}
+        <div class="Tarjeta">
+            <div class="Informacion_P">
+                <p class="Nombre_M">{{materia.Nombre}}</p>
+                <p class="Clases_M">Clases Faltantes: {{materia.Clases_Materia}}</p>
+            </div>
+            <div class="Informacion_S">
+                <p class="Cantidad_N">{{materia.Total_Notas}}/{{materia.Cantidad_Notas}} Notas</p>
+                <div class="Porcentajes_N">
+                    <div class="Caja">
+                        <p class="Nota_C">{{materia.Promedio_Total}}</p>
+                        <p class="Unidad">General</p>
+                    </div>
+                    <div class="Caja">
+                        <p class="Nota_C">{{materia.Promedio_Parcial}}</p>
+                        <p class="Unidad">Parcial</p>
+                    </div>
+                    <div class="Caja">
+                        <p class="Nota_C">{{materia.Promedio_Faltante}}</p>
+                        <p class="Unidad">Faltante</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</section>
+        <button class='Agregar' onclick="location.href='{% url 'FormularioMateria'%}'">+</button>
+        <button class='Volver' onclick="window.history.back()">Volver</button>
+
+{% endblock %}

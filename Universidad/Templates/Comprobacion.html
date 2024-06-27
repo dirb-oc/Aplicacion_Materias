@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{%block tittle%}Semestres {% endblock %}
+
+{%block body%}
+    
+    <div class="Centrar">
+        <div class="Formulario">
+            <div class="Borde_Superior"></div>
+            <h2 class="Titulo_Formulario">Comprobante</h2>
+            <div class="Comprobante_T">
+                <p>Estas seguro de eliminar este registro:</p>
+                <p class="Comprobante_E">{{semestre}}</p>
+            </div>
+            <form method="post" action="{% url 'Eliminar' semestre.id %}">
+                {% csrf_token %}
+            <div class="Comprobante_B">
+                <a class="Boton_Cancelar" onclick="window.history.back()">Cancelar</a>
+                <button class="Boton_Eliminar" type="submit" >Eliminar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    
+{% endblock %}

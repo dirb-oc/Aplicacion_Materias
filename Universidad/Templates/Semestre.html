@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{%block tittle%}Semestres {% endblock %}
+
+{%block body%}
+    <h1>Semestres</h1>
+        <table>
+            <thead>
+                <th>N°</th><th>Estado</th><th>Promedio</th><th>Creditos Totales</th>
+            </thead>
+            <tbody>
+            {%for semestre in Semestres%}
+                <tr onclick="location.href='{% url 'MateriasSemestre' semestre.id %}'">
+                    <td>{{semestre.Nombre}}</td>
+                    <td>{{semestre.Estado}}</td>
+                    <td>{{semestre.Promedio_m}}</td>
+                    <td>{{semestre.Creditos_S}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button class='Agregar' onclick="location.href='{% url 'Formulario' %}'">+</button>
+        <button class='Volver' onclick="window.history.back()">Volver</button>
+    
+{% endblock %}

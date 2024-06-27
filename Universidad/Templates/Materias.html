@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{%block tittle%}Materias {% endblock %}
+
+{%block body%}
+    <h1>Materias</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Semestre</th>
+                    <th>Notas</th>
+                    <th>Creditos</th>
+                    <th>Promedio</th>
+                </tr>
+            </thead>
+            
+            {%for materia in Materias%}
+            <tr onclick="location.href='{% url 'Notas' materia.id %}'">
+                <td>{{materia.Nombre}}</td>
+                <td>{{materia.Semestre}}</td>
+                <td>{{materia.Cantidad_Notas}}</td>
+                <td>{{materia.Creditos}}</td>
+                <td>{{materia.Promedio_Total}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button class='Agregar' onclick="location.href='{% url 'FormularioMateria'%}'">+</button>
+        <button class='Volver' onclick="window.history.back()">Volver</button>
+{% endblock %}

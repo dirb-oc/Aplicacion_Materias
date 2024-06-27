@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{%block tittle%}Materias {% endblock %}
+
+{%block body%}
+
+    <div class="Centrar">
+        <div class="Formulario">
+            <div class="Borde_Superior"></div>
+            <h2 class="Titulo_Formulario">Comprobante</h2>
+            <div class="Comprobante_T">
+                <p>Estas seguro de eliminar este registro:</p>
+                <p class="Comprobante_E">{{materia}}</p>
+            </div>
+            <div class="Comprobante_B">
+                <a class="Boton_Cancelar" onclick="window.history.back()">Cancelar</a>
+                <button class="Boton_Eliminar" onclick="location.href='{% url 'EliminarMateria' materia.id%}'">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

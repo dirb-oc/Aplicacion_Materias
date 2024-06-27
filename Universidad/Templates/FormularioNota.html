@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Formulario{% endblock %}
+
+{% block body %}
+<div class="Centrar">
+    {% if form != 'Se ha alcanzado el maximo de notas' %}
+    <form method="POST" novalidate class="Formulario">
+        <div class="Borde_Superior"></div>
+        <h2 class="Titulo_Formulario">Formulario Nota</h2>
+        <div class="Elementos_F">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="Enviar">Enviar</button>
+        </div>
+    </form>
+    {% else %}
+        <p class="Notas_Maxima">Notas Maximas Alcanzadas</p>
+    {% endif %}
+</div>
+
+<button class='Volver Form' onclick="window.history.back()">Volver</button>
+{% endblock %}
+
+

@@ -1,0 +1,588 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+:root{
+    --Fondo: hsl(230, 17%, 14%);
+    --Fichero: hsl(228, 28%, 20%);
+    --Borde_Superio: rgb(0, 174, 255);
+    --Curso: rgb(0, 146, 214);
+    --Texto: rgb(255, 255, 255);
+    --Texto_Secundario: hsl(228, 34%, 66%);;
+    --Barra_Indicador: hsl(163, 72%, 41%);
+    --Tarjeta: #f9f9f9;
+    --Caja_Formulario: hsl(234, 9%, 23%);
+}
+
+body{
+    background: var(--Fondo)
+}
+
+h1{
+    color: var(--Texto);
+    margin: 35px 0px 10px 100px;
+    font-weight: 700;
+    font-size: 1.7rem;
+}
+
+/*Index*/
+.Tablero{
+    margin-left: 100px;
+    display: flex;
+    margin-top: 10px;
+}
+
+.Fichero{
+    background: var(--Fichero);
+    text-align: center;
+    border-radius: 8px;
+    width: 390px;
+    height: 260px;
+    margin-right: 25px;
+}
+    
+.Borde_Superior{
+    position: relative;
+    background: var(--Borde_Superio);
+    width: 100%;
+    top: 0;
+    height: 12px;
+    border-radius: 8px 8px 0px 0px;
+
+}
+
+.Fichero:hover .Borde_Superior{
+    background: var(--Barra_Indicador);
+    transition: 0.8s;
+}
+        
+.Contenido{
+    margin-top: 50px;
+    align-items: center;
+}
+
+.Indicador{
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--Texto);
+}
+
+.Indicador span{
+    color: var(--Barra_Indicador)
+}
+
+.Tema{
+    color: var(--Texto_Secundario);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.Porcentaje{
+    margin-top: 10px;
+    color: var(--Barra_Indicador);
+    font-weight: 700;
+    font-size: 21px;
+}
+
+.Semestre_Curso{
+    background: var(--Fichero);
+    display: block;
+    width: 1630px;
+    height: 500px;
+    margin: 20px 0px 30px 100px;
+    border-radius: 8px;
+}
+
+.Bloque{
+    display: flex;
+    width: 100%;
+    height: 50%; 
+}
+
+.Value{
+    border: solid 1px var(--Fondo);
+    width: 50%;
+    height: 100%; 
+    color: var(--Barra_Indicador);
+    font-size:25px;
+}
+
+.Espe{
+    margin: 70px 40px 0px 100px;
+}
+
+.Dato{
+    text-decoration: none;
+    color: var(--Texto);
+    font-size: 60px;
+    font-weight: 700;
+    margin: 10px 40px 40px 100px;
+}
+
+a{
+    text-decoration:  none;
+
+    :hover{
+        Color: var(--Curso);
+        transition: 0.5s;
+    }
+}
+
+/*Semestre en Curso*/
+.Pizarra{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px 20px 20px 100px;
+    width: 86.8%;
+}
+
+.Tarjeta{
+    width: 800px;
+    height: 230px;
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.Informacion_P{
+    width: 35%;
+    height: 100%;
+    border-radius: 8px 0px 0px 8px;
+    background: var(--Tarjeta);
+}
+
+.Informacion_S{
+    width: 65%;
+    height: 100%;
+    border-radius: 0px 8px 8px 0px;
+    background: var(--Fichero);
+}
+
+.Nombre_M{
+    box-sizing: border-box;
+    height: 65%;
+    padding: 30px 20px 20px 20px;
+    color: var(--Fichero);
+    font-weight: 700;
+    font-size:  30px;
+    letter-spacing: 0.7px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.Clases_M{
+    height: 35%;
+    padding: 25px 0px 0px 20px;
+    box-sizing: border-box;
+    font-size: 22px;
+    color: var(--Texto_Secundario);
+}
+
+.Cantidad_N{
+    box-sizing: border-box;
+    color: var(--Barra_Indicador);
+    text-align: end;
+    height: 25%;
+    padding: 15px 30px 15px 15px;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.Porcentajes_N{
+    height: 75%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Caja{
+    width: 120px;
+    margin: 25px 0px 0px 25px;
+    text-align: center;
+}
+
+.Nota_C{
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--Texto);
+}
+
+.Unidad{
+    color: var(--Texto_Secundario);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.Volver{
+    color: var(--Fondo);
+    height: 45px;
+    width: 65px;
+    font-size: 20px;
+    margin-left: 100px;
+    border: none;
+    border-radius: 5px;
+}
+
+.Volver:hover{
+    background: var(--Fondo);
+    color: var(--Texto);
+    border: 1px solid var(--Texto);
+    transition: 0.8s;
+}
+
+/*Tablas*/
+table{
+    margin: 20px 0px 10px 100px;
+    width: 85%;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 25px;
+}
+
+thead{
+    background: var(--Tarjeta);
+    color: var(--Fondo);
+    height: 55px;
+}
+
+thead th:first-child {
+    border-top-left-radius: 8px;
+}
+
+thead th:last-child {
+    border-top-right-radius: 8px;
+}
+
+td{
+    background: var(--Fichero);
+    color: var(--Texto);
+    height: 55px;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+tr:hover td{
+    background: var(--Barra_Indicador);
+    transition: 0.8s;
+}
+
+.Agregar{
+    color: var(--Fondo);
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+    float: right;
+    margin-right: 190px;
+    border: none;
+    border-radius: 5px;
+}
+
+.Agregar:hover{
+    background: var(--Fondo);
+    color: var(--Texto);
+    border: 1px solid var(--Texto);
+    transition: 0.8s;
+}
+
+.Secundaria{
+    display: flex;
+    width: 85%;
+    margin: 20px 0px 10px 100px;
+    justify-content: space-between;
+}
+
+.Bloques{
+    width: 45%;
+}
+
+.Tabla_Secundaria{
+    margin: 0;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.Segundo{
+    margin-left: 0px;
+}
+
+.Secundario{
+    margin-right: 0;
+}
+
+
+/*Formularios*/
+.Centrar{
+    display: flex;
+    justify-content: center;
+}
+
+.Formulario{
+    background: var(--Fichero);
+    width: 450px;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.Titulo_Formulario{
+    color: var(--Texto);
+    text-align: center;
+    margin: 15px;
+    margin-bottom: 0;
+}
+
+label{
+    color: var(--Texto);
+    display: block;
+    margin-top: 20px;
+}
+
+input{
+    background:  var(--Fondo);
+    color: var(--Texto);
+    margin-top:3px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+    height: 25px;
+    border: none;
+}
+
+select{
+    background: var(--Fondo);
+    color: var(--Texto);
+    margin-bottom: 10px;
+    border: none;
+}
+
+.Elementos_F{
+    width: 80%;
+    margin: auto;
+}
+
+.Enviar{
+    background: var(--Barra_Indicador);
+    color: var(--Texto);
+    border: none;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    height: 35px;
+}
+
+.Notas_Maxima{
+    color: var(--Texto);
+    margin: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/*Comprobantes*/
+.Comprobante_T{
+    margin: 10px 10px 5px 20px;
+    color: var(--Texto);
+}
+
+.Comprobante_E{
+    color: var(--Barra_Indicador);
+    font-weight: 700;
+    font-size: 23px;
+    margin-top: 10px;
+    font-style: oblique;
+}
+
+.Comprobante_B{
+    display: flex;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.Boton_Cancelar, .Boton_Eliminar{
+    background: var(--Fichero);
+    color: var(--Texto);
+    height: 35px;
+    width: 90px;
+    margin-left: 10px;
+    font-size: 20px;
+    float: right;
+    border: 1px solid var(--Texto);
+    border-radius: 5px;
+}
+
+.Boton_Cancelar{
+    margin-left: auto;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Boton_Cancelar:hover{
+    background: var(--Texto);
+    color: var(--Fichero);
+    transition: 0.8s;
+}
+
+.Boton_Eliminar:hover{
+    background: red;
+    border: none;
+    transition: 0.7s;
+}
+
+.Form{
+    margin-top: 20px;
+    margin-left: 735px;
+}
+
+/*Informacion*/
+.Tarjeta_Informacion{
+    width: 85%;
+    height: 250px;
+    background: var(--Fichero);
+    border-radius: 8px;
+    margin: 35px 0px 10px 100px;
+}
+
+.Informacion_Superior{
+    background: var(--Texto);
+    display: flex;
+    height: 25%;
+    padding: 0px 0 0px 35px;
+    color: var(--Fichero);
+    border-radius: 8px 8px 0 0;
+}
+.Informacion_Superior h2{
+    margin-top:10px;
+    font-size: 35px;
+}
+
+.Borrar{
+    margin: 18px 7px 7px 20px;
+}
+
+.Borrar::after{
+    content: "Eliminiar";
+    font-size: 14px;
+    color: red;
+    border: 1px solid red;
+    padding: 3px 7px;
+    border-radius: 10px;
+    top: -5px;
+    cursor: pointer;
+    transition: all .8s;
+}
+
+.Borrar:hover::after{
+    background: red;
+    color: var(--Texto);
+}
+
+.Informacion_Inferior{
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
+.Caja_2{
+    text-align: center;
+    width: 100%;
+    color: var(--Texto);
+}
+
+.Campo{
+    margin-top: 40px;
+    color: var(--Barra_Indicador);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.Valor{
+    margin-top: 5px;
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--Texto);
+}
+
+.Editar{
+    width: 100%;
+    height:25%;
+    display: flex;
+    justify-content: end;
+}
+
+.Edicion{
+    background: var(--Fichero);
+    color: var(--Texto);
+    height: 35px;
+    width: 90px;
+    margin-right: 30px;
+    margin-top: 10px;
+    font-size: 25px;
+    float: right;
+    border: 1px solid var(--Texto);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Edicion:hover{
+    background: var(--Barra_Indicador);
+    transition: 0.8s;
+}
+
+/*Tarjeta Edicion*/
+.Informacion_Edicion{
+    margin: 10px 25px 5px 25px;
+    color: var(--Texto);
+}
+
+
+.Seleccion_Edicion{
+    margin: 10px 25px 15px 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Edicion_Enviar, .Edicion_Eliminar{
+    background: var(--Fichero);
+    color: var(--Texto);
+    height: 35px;
+    width: 90px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.Edicion_Enviar{
+    border: 1px solid white;
+}
+
+.Edicion_Enviar:hover{
+    background: var(--Texto);
+    color: var(--Fichero);
+    transition: .8s;
+}
+
+.Edicion_Eliminar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Edicion_Eliminar:hover{
+    background: red;
+    transition: .8s;
+}
+

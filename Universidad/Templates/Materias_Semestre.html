@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{%block tittle%}Materias{% endblock %}
+
+{%block body%}
+    {%for informacion in Informacion%}
+
+    <div class="Tarjeta_Informacion">
+        <div class="Informacion_Superior">
+            <h2>{{informacion.Nombre}}</h2>
+            <a class="Borrar" onclick="location.href='{% url 'Comprobante' informacion.id%}'"></a>
+        </div>
+        <div class="Informacion_Inferior">
+            <div class="Caja_2">
+                <p class="Campo">Estado</p>
+                <p class="Valor">{{informacion.Estado}}</p>
+            </div>      
+            <div class="Caja_2">
+                <p class="Campo">Fecha de Inicio</p>
+                <p class="Valor">{{informacion.Inicio}}</p>
+            </div>      
+            <div class="Caja_2">
+                <p class="Campo">Fecha Final</p>
+                <p class="Valor">{{informacion.Fin}}</p>
+            </div>      
+        </div>
+        <div class="Editar">
+            <button class="Edicion" onclick="location.href='{% url 'Editar' informacion.id %}'">Editar</button>
+        </div>
+    </div>
+    
+    {%endfor%}
+    <h1>Materias</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Notas</th>
+                    <th>Creditos</th>
+                    <th>Promedio</th>
+                </tr>
+            </thead>
+            
+            {%for materia in Materias%}
+            <tr onclick="location.href='{% url 'Notas' materia.id %}'">
+                <td>{{materia.Nombre}}</td>
+                <td>{{materia.Cantidad_Notas}}</td>
+                <td>{{materia.Creditos}}</td>
+                <td>{{materia.Promedio_Total}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button class='Agregar' onclick="location.href='{% url 'FormularioMateria'%}'">+</button>
+        <button class='Volver' onclick="window.history.back()">Volver</button>
+{% endblock %}

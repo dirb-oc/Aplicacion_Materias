@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{%block tittle%}Formulario {% endblock %}
+
+{%block body%}
+<div class='Centrar'>
+    <form method='POST' novalidate class='Formulario'>
+        <div class="Borde_Superior"></div>
+        <h2 class="Titulo_Formulario">Formulario Horario</h2>
+        <div class='Elementos_F'>
+            {% csrf_token %}
+            {{form}}
+            <button type='submit' class='Enviar'>Enviar</button>
+        </div>
+    </form>
+</div>
+<button class='Volver Form' onclick="window.history.back()">Volver</button>
+{% endblock %}

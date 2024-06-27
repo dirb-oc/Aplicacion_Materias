@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{%block tittle%}Inicio{% endblock %}
+
+{%block body%}
+<h1>Informacion General</h1>
+
+<section class="Tablero">
+    <div class="Fichero Envio" onclick="location.href='{% url 'Semestres'%}'">
+        <div class="Borde_Superior"></div>
+        <div class="Contenido">
+            <p class="Indicador">{{C_Aprobados}}<span>/</span>{{Cantidad}}</p>
+            <p class="Tema">Creditos</p>
+            <p class="Porcentaje">{{Porcentaje_Creditos}}%</p>
+        </div>
+    </div>
+    <div class="Fichero Envio" onclick="location.href='{% url 'Materias'%}'">
+        <div class="Borde_Superior"></div>
+        <div class="Contenido">
+            <p class="Indicador">{{M_Aprobadas}}<span>/</span>{{Mat}}</p>
+            <p class="Tema">Materias</p>
+            <p class="Porcentaje">{{Porcentaje_Materias}}%</p>
+        </div>
+    </div>
+    <div class="Fichero">
+        <div class="Borde_Superior"></div>
+        <div class="Contenido">
+            <p class="Indicador">{{promedio_Carrera}}</p>
+            <p class="Tema">Promedio General</p>
+            <p class="Porcentaje">{{procentaje_Carrera_F}}%</p>
+        </div>
+    </div>
+    <div class="Fichero">
+        <div class="Borde_Superior"></div>
+        <div class="Contenido">
+            <p class="Indicador">{{promedio_Carrera_Parcial}}</p>
+            <p class="Tema">Promedio Parcial</p>
+            <p class="Porcentaje">{{procentaje_Carrera_P}}%</p>
+        </div>
+    </div>
+</section>
+
+<a onclick="location.href='{% url 'SemestresCurso'%}'" class='Envio'><h1>Semestre en Curso</h1></a>
+
+{% for semestre in Semestre_C %}
+<div class="Semestre_Curso">
+    <div class="Bloque">
+        <div class="Value">
+            <p class="Espe">Semestre Actual:</p>
+            <P class="Dato">{{semestre.Nombre}}</p>
+        </div>
+        <div class="Value">
+            <p class="Espe">Clases Faltantes:</p>
+            <P class="Dato">{{semestre.Clases_Semestre}}</P>
+        </div>
+    </div>
+    <div class="Bloque">
+        <div class="Value">
+            <p class="Espe">Promedio General:</p>
+            <P class="Dato">{{semestre.Promedio_m}}</P>
+        </div>
+        <div class="Value">
+            <p class="Espe">Promedio Parcial:</p>
+            <P class="Dato">{{semestre.Promedio_p}}</P>
+        </div>
+    </div>
+</div>
+{% endfor %}
+    
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{%block tittle%}Notas {% endblock %}
+
+{%block body%}
+
+{%for info in Informacion%}
+<div class="Tarjeta_Informacion">
+    <div class="Informacion_Superior">
+        <h2>{{info.Nombre}}</h2>
+        <span class="Borrar" onclick="location.href='{% url 'ComprobanteMateria' info.id%}'"></span>
+    </div>
+    <div class="Informacion_Inferior">
+        <div class="Caja_2">
+            <p class="Campo">Semestre</p>
+            <p class="Valor">{{info.Semestre}}</p>
+        </div>      
+        <div class="Caja_2">
+            <p class="Campo">Cantidad de Notas</p>
+            <p class="Valor">{{info.Cantidad_Notas}}</p>
+        </div>      
+        <div class="Caja_2">
+            <p class="Campo">Creditos</p>
+            <p class="Valor">{{info.Creditos}}</p>
+        </div>      
+        <div class="Caja_2">
+            <p class="Campo">Aprobacion</p>
+            <p class="Valor">{{info.Minimo_A}}</p>
+        </div>      
+        <div class="Caja_2">
+            <p class="Campo">Estado</p>
+            {% if info.Termino == False  %}
+                <p class="Valor">Pendiente</p>
+            {% else %}
+                <p class="Valor">Aprobado</p>
+            {% endif %}
+        </div>      
+    </div>
+    <div class="Editar">
+        <button class="Edicion" onclick="location.href='{% url 'EditarMateria' info.id %}'">Editar</button>
+    </div>
+</div>
+{%endfor%}
+        
+    <h1>Notas y Horario</h1>
+    <div class="Secundaria">
+        <div class="Bloques">
+            <table class="Tabla_Secundaria">
+                <thead>
+                    <tr>
+                        <th>Calificacion</th>
+                        <th>Descripcion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for nota in Notas %}
+                    <tr onclick="location.href='{% url 'EditarNota' nota.id %}'">
+                        <td>{{ nota.Calificacion }}</td>
+                        <td>{{ nota.Descripcion }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button class='Agregar Secundario' onclick="location.href='{% url 'FormularioNota' Id_Materia%}'">+</button>
+            <button class='Volver Segundo' onclick="window.history.back()">Volver</button>
+        </div>
+        <div class="Bloques">
+            <table class="Tabla_Secundaria">
+                <thead>
+                    <th>Dia</th>
+                </thead>
+                <tbody>
+                    {% for dia in Horario %}
+                    <tr onclick="location.href='{% url 'EditarHorario' dia.id %}'">
+                        <td>{{ dia.Dias }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button class='Agregar Secundario' onclick="location.href='{% url 'FormularioHorario' Id_Materia%}'">+</button>
+        </div>
+    </div>
+
+{% endblock %}

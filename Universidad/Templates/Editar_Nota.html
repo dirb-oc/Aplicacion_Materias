@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{%block tittle%}Semestres {% endblock %}
+
+{%block body%}
+<div class="Centrar">
+    <div class="Formulario">
+        <div class="Borde_Superior"></div>
+        <h2 class="Titulo_Formulario">Informacion</h2>
+        <div class="Informacion_Edicion">
+            <form method='POST' novalidate>
+            {% csrf_token %}
+            {{form}}
+        </div>
+        <div class="Seleccion_Edicion">
+            <a class="Edicion_Eliminar" onclick="location.href='{% url 'EliminarNota' Id_Nota%}'">Eliminar</a>
+            <button class="Edicion_Enviar" type='submit'>Enviar</button>
+        </div>
+            </form>
+    </div>
+</div>
+{% endblock %}
